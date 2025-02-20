@@ -1,0 +1,186 @@
+.raid-logs-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.logs-title {
+  font-family: 'Cinzel', serif;
+  font-size: 3rem;
+  color: var(--color-light-gold);
+  text-align: center;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px var(--color-dark-gold);
+}
+
+.logs-subtitle {
+  text-align: center;
+  color: var(--color-light-gold);
+  font-style: italic;
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  opacity: 0.9;
+}
+
+.logs-filter {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: transparent;
+  color: var(--color-light-gold);
+  border: 1px solid var(--color-light-gold);
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Cinzel', serif;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--color-light-gold);
+  color: var(--color-dark-violet);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+}
+
+.logs-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.timeline-item {
+  background: rgba(155, 79, 150, 0.1);
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-light-gold);
+  position: relative;
+}
+
+.timeline-date {
+  position: absolute;
+  top: -12px;
+  left: 20px;
+  background: var(--color-dark-violet);
+  color: var(--color-light-gold);
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--color-light-gold);
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.timeline-content h3 {
+  color: var(--color-light-gold);
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  font-family: 'Cinzel', serif;
+}
+
+.battle-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.stat {
+  background: rgba(46, 20, 55, 0.6);
+  padding: 1rem;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.stat .label {
+  color: var(--color-light-gold);
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+
+.stat .value {
+  color: var(--color-light-gold);
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.battle-description {
+  color: var(--color-light-gold);
+  opacity: 0.9;
+  line-height: 1.6;
+  margin: 1.5rem 0;
+}
+
+.battle-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.highlight {
+  background: rgba(46, 20, 55, 0.6);
+  padding: 0.8rem 1rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: var(--color-light-gold);
+}
+
+.highlight-icon {
+  font-size: 1.2rem;
+}
+
+.logs-navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.nav-btn {
+  background: transparent;
+  color: var(--color-light-gold);
+  border: 1px solid var(--color-light-gold);
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Cinzel', serif;
+}
+
+.nav-btn:hover {
+  background: var(--color-light-gold);
+  color: var(--color-dark-violet);
+  transform: translateY(-2px);
+}
+
+.page-indicator {
+  color: var(--color-light-gold);
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .logs-title {
+    font-size: 2.5rem;
+  }
+  
+  .battle-stats {
+    grid-template-columns: 1fr;
+  }
+  
+  .battle-highlights {
+    flex-direction: column;
+  }
+  
+  .highlight {
+    width: 100%;
+  }
+}

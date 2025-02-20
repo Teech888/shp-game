@@ -1,0 +1,193 @@
+.captains-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.captains-title {
+  font-family: 'Cinzel', serif;
+  font-size: 3rem;
+  color: var(--color-light-gold);
+  text-align: center;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px var(--color-dark-gold);
+}
+
+.captains-subtitle {
+  text-align: center;
+  color: var(--color-light-gold);
+  font-style: italic;
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  opacity: 0.9;
+}
+
+.leadership-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.main-captain {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.captain-banner {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-dark-violet);
+  color: var(--color-light-gold);
+  padding: 0.5rem 2rem;
+  border: 1px solid var(--color-light-gold);
+  border-radius: 4px;
+  font-size: 1.1rem;
+  font-family: 'Cinzel', serif;
+}
+
+.captain-card {
+  background: rgba(155, 79, 150, 0.1);
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-light-gold);
+  transition: all 0.3s ease;
+}
+
+.captain-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(212, 175, 55, 0.2);
+}
+
+.captain-avatar {
+  font-size: 4rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.captain-info h3 {
+  color: var(--color-light-gold);
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  font-family: 'Cinzel', serif;
+}
+
+.captain-title {
+  color: var(--color-light-gold);
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+  font-style: italic;
+}
+
+.captain-stats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.captain-stats .stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.stat .label {
+  color: var(--color-light-gold);
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+
+.stat .value {
+  color: var(--color-light-gold);
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.captain-description {
+  color: var(--color-light-gold);
+  text-align: center;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.officers-section {
+  margin-top: 2rem;
+}
+
+.officers-section h3 {
+  color: var(--color-light-gold);
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-family: 'Cinzel', serif;
+}
+
+.officers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.contact-section {
+  margin-top: 3rem;
+  background: rgba(155, 79, 150, 0.1);
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-light-gold);
+}
+
+.contact-section h3 {
+  color: var(--color-light-gold);
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-family: 'Cinzel', serif;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--color-light-gold);
+  padding: 1rem;
+  background: rgba(46, 20, 55, 0.6);
+  border-radius: 4px;
+}
+
+.contact-icon {
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .captains-title {
+    font-size: 2.5rem;
+  }
+  
+  .officers-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .captain-stats {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .contact-item {
+    flex-direction: column;
+    text-align: center;
+  }
+}

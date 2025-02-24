@@ -1,193 +1,241 @@
+:root {
+  --card-min-width: 280px;
+  --section-padding: clamp(1rem, 3vw, 2rem);
+  --card-padding: clamp(0.8rem, 2vw, 1.5rem);
+  --safe-area-inset-bottom: env(safe-area-inset-bottom, 0px);
+}
+
 .captains-container {
-  max-width: 1200px;
+  padding: var(--section-padding);
+  color: var(--text-color);
+  width: 100%;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 2rem;
+  box-sizing: border-box;
+  padding-bottom: calc(var(--section-padding) + var(--safe-area-inset-bottom));
 }
 
 .captains-title {
-  font-family: 'Cinzel', serif;
-  font-size: 3rem;
-  color: var(--color-light-gold);
+  color: var(--gold);
   text-align: center;
-  margin-bottom: 1rem;
-  text-shadow: 0 0 10px var(--color-dark-gold);
+  font-size: clamp(1.5rem, 6vw, 2.5rem);
+  margin-bottom: 0.5rem;
+  font-family: 'Cinzel', serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  padding: 0 1rem;
 }
 
 .captains-subtitle {
   text-align: center;
-  color: var(--color-light-gold);
-  font-style: italic;
-  font-size: 1.2rem;
-  margin-bottom: 3rem;
-  opacity: 0.9;
+  color: var(--light-violet);
+  font-size: clamp(0.9rem, 4vw, 1.2rem);
+  margin-bottom: clamp(1rem, 4vw, 2rem);
+  padding: 0 1rem;
 }
 
-.leadership-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
+.council-grid {
+  display: grid;
+  gap: var(--section-padding);
+  width: 100%;
+  grid-template-columns: 1fr;
+  padding: 0 0.5rem;
+  box-sizing: border-box;
 }
 
-.main-captain {
-  position: relative;
-  max-width: 800px;
-  margin: 0 auto;
+.council-section {
+  background: rgba(46, 20, 55, 0.7);
+  border-radius: 15px;
+  padding: var(--section-padding);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--gold);
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
 }
 
-.captain-banner {
-  position: absolute;
-  top: -12px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--color-dark-violet);
-  color: var(--color-light-gold);
-  padding: 0.5rem 2rem;
-  border: 1px solid var(--color-light-gold);
-  border-radius: 4px;
-  font-size: 1.1rem;
+.council-section-title {
+  color: var(--gold);
+  text-align: center;
+  font-size: clamp(1.2rem, 5vw, 1.8rem);
+  margin-bottom: clamp(0.8rem, 3vw, 1.5rem);
   font-family: 'Cinzel', serif;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  padding: 0 0.5rem;
+}
+
+.council-members {
+  display: grid;
+  gap: 1rem;
+  width: 100%;
+  grid-template-columns: 1fr;
 }
 
 .captain-card {
-  background: rgba(155, 79, 150, 0.1);
-  padding: 2rem;
-  border-radius: 8px;
-  border: 1px solid var(--color-light-gold);
-  transition: all 0.3s ease;
+  background: rgba(46, 20, 55, 0.9);
+  border-radius: 12px;
+  padding: var(--card-padding);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--light-violet);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0.5rem 0;
 }
 
 .captain-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(212, 175, 55, 0.2);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  border-color: var(--gold);
+}
+
+.captain-banner {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gold);
+  color: var(--dark-violet);
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  white-space: nowrap;
+  max-width: 90%;
+  text-align: center;
+  z-index: 1;
+}
+
+.captain-photo {
+  width: clamp(80px, 25vw, 120px);
+  height: clamp(80px, 25vw, 120px);
+  border-radius: 50%;
+  margin: 1.5rem auto 1rem;
+  background: rgba(155, 79, 150, 0.3);
+  border: 2px solid var(--gold);
+  position: relative;
+}
+
+.captain-photo::after {
+  content: '📷';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(1.5rem, 6vw, 2rem);
+  opacity: 0.5;
 }
 
 .captain-avatar {
-  font-size: 4rem;
+  font-size: clamp(1.5rem, 6vw, 2rem);
   text-align: center;
-  margin-bottom: 1rem;
+  margin: 0.5rem 0;
+}
+
+.captain-info {
+  width: 100%;
+  text-align: center;
 }
 
 .captain-info h3 {
-  color: var(--color-light-gold);
-  font-size: 1.8rem;
+  color: var(--gold);
   text-align: center;
-  margin-bottom: 0.5rem;
+  margin: 0.5rem 0;
   font-family: 'Cinzel', serif;
-}
-
-.captain-title {
-  color: var(--color-light-gold);
-  text-align: center;
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
-  opacity: 0.9;
-  font-style: italic;
+  font-size: clamp(1rem, 4.5vw, 1.3rem);
 }
 
 .captain-stats {
   display: flex;
   justify-content: center;
-  gap: 2rem;
-  margin-bottom: 1.5rem;
+  gap: 1rem;
+  margin: 0.8rem 0;
+  flex-wrap: wrap;
 }
 
-.captain-stats .stat {
+.stat {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.3rem;
+  min-width: 70px;
+  padding: 0.3rem;
 }
 
 .stat .label {
-  color: var(--color-light-gold);
-  opacity: 0.8;
-  font-size: 0.9rem;
+  color: var(--light-violet);
+  font-size: 0.85rem;
 }
 
 .stat .value {
-  color: var(--color-light-gold);
-  font-size: 1.2rem;
+  color: var(--gold);
   font-weight: bold;
+  font-size: 1rem;
+  margin-top: 0.2rem;
 }
 
 .captain-description {
-  color: var(--color-light-gold);
   text-align: center;
-  opacity: 0.9;
-  line-height: 1.6;
+  color: var(--text-color);
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-top: 0.8rem;
+  padding: 0 0.5rem;
 }
 
-.officers-section {
-  margin-top: 2rem;
-}
-
-.officers-section h3 {
-  color: var(--color-light-gold);
-  font-size: 2rem;
-  text-align: center;
-  margin-bottom: 2rem;
-  font-family: 'Cinzel', serif;
-}
-
-.officers-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-}
-
-.contact-section {
-  margin-top: 3rem;
-  background: rgba(155, 79, 150, 0.1);
-  padding: 2rem;
-  border-radius: 8px;
-  border: 1px solid var(--color-light-gold);
-}
-
-.contact-section h3 {
-  color: var(--color-light-gold);
-  font-size: 1.8rem;
-  text-align: center;
-  margin-bottom: 2rem;
-  font-family: 'Cinzel', serif;
-}
-
-.contact-info {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.contact-item {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  color: var(--color-light-gold);
-  padding: 1rem;
-  background: rgba(46, 20, 55, 0.6);
-  border-radius: 4px;
-}
-
-.contact-icon {
-  font-size: 1.5rem;
-}
-
-@media (max-width: 768px) {
-  .captains-title {
-    font-size: 2.5rem;
+/* Tablet and larger */
+@media screen and (min-width: 768px) {
+  .council-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 1rem;
   }
-  
-  .officers-grid {
-    grid-template-columns: 1fr;
+
+  .council-members {
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  .captain-stats {
-    flex-direction: column;
-    align-items: center;
+
+  .council-section:nth-child(4),
+  .council-section:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .council-section:nth-child(4) .council-members,
+  .council-section:last-child .council-members {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* iPhone and other mobile devices */
+@media screen and (max-width: 767px) {
+  .captains-container {
+    padding: 0.5rem;
+    padding-bottom: calc(1rem + var(--safe-area-inset-bottom));
+  }
+
+  .council-section {
+    padding: 1rem;
+    margin: 0.5rem 0;
+  }
+
+  .council-members {
     gap: 1rem;
   }
-  
-  .contact-item {
-    flex-direction: column;
-    text-align: center;
+
+  .captain-card {
+    margin: 0.5rem 0;
+  }
+
+  .captain-stats {
+    gap: 0.8rem;
+  }
+
+  /* iPhone specific */
+  @supports (-webkit-touch-callout: none) {
+    .captains-container {
+      padding-left: max(0.5rem, env(safe-area-inset-left));
+      padding-right: max(0.5rem, env(safe-area-inset-right));
+      padding-bottom: max(1rem, env(safe-area-inset-bottom));
+    }
   }
 }

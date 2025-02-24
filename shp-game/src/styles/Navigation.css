@@ -1,0 +1,71 @@
+.navigation-container {
+  background: rgba(46, 20, 55, 0.8);
+  border: 1px solid var(--gold);
+  border-radius: 15px;
+  padding: 1rem;
+  margin: 1rem auto;
+  max-width: 1200px;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.2rem;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--gold);
+  border-radius: 8px;
+  color: var(--gold);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-family: 'Cinzel', serif;
+}
+
+.nav-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+  background: rgba(212, 175, 55, 0.1);
+}
+
+.nav-icon {
+  font-size: 1.2rem;
+}
+
+.nav-text {
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 767px) {
+  .navigation-container {
+    padding: 0.8rem;
+    margin: 0.8rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+  }
+
+  .nav-link {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* iPhone specific */
+@supports (-webkit-touch-callout: none) {
+  .navigation-container {
+    padding-left: max(0.8rem, env(safe-area-inset-left));
+    padding-right: max(0.8rem, env(safe-area-inset-right));
+  }
+}

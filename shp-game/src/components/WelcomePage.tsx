@@ -13,26 +13,30 @@ const WelcomePage: React.FC = () => {
         <p className="subtitle">Ruthless Raiders of Tamaris</p>
         
         <div className="cta-buttons">
-          <button className="btn-primary" onClick={() => navigate('/join')}>Join the Raid</button>
+          <button className="btn-primary" onClick={() => navigate('/join')}>Join the Crew</button>
           <button className="btn-secondary" onClick={() => navigate('/spoils')}>View Our Spoils</button>
         </div>
         
         <nav className="navigation-menu">
-          <Link to="/code" className="nav-item">
+          <Link to="/pirate-code" className="nav-item">
             <div className="nav-icon">📜</div>
             <span>Pirate Code</span>
           </Link>
-          <Link to="/join" className="nav-item">
-            <div className="nav-icon">⚔️</div>
-            <span>Join the Crew</span>
-          </Link>
-          <Link to="/logs" className="nav-item">
-            <div className="nav-icon">🎯</div>
-            <span>Raid Logs</span>
+          <Link to="/battle-videos" className="nav-item">
+            <div className="nav-icon">🎬</div>
+            <span>Battle Videos</span>
           </Link>
           <Link to="/captains" className="nav-item">
             <div className="nav-icon">👑</div>
             <span>The Captains</span>
+          </Link>
+          <Link to="/history" className="nav-item">
+            <div className="nav-icon">🗺️</div>
+            <span>Our History</span>
+          </Link>
+          <Link to="/hall-of-fame" className="nav-item">
+            <div className="nav-icon">🏆</div>
+            <span>Honourable Room</span>
           </Link>
         </nav>
       </div>

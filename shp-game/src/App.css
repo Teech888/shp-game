@@ -40,3 +40,29 @@
 .read-the-docs {
   color: #888;
 }
+
+.app-container {
+  min-height: 100vh;
+  padding: 1rem;
+  background: var(--dark-violet);
+}
+
+.page-container {
+  background: rgba(46, 20, 55, 0.8);
+  border: 1px solid var(--gold);
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 1rem auto;
+  max-width: 1200px;
+  color: var(--text-color);
+  font-family: 'Cinzel', serif;
+}
+
+/* iPhone specific */
+@supports (-webkit-touch-callout: none) {
+  .app-container {
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+}

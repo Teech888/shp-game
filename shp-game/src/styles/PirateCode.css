@@ -1,25 +1,25 @@
 .pirate-code-container {
-  max-width: 1000px;
+  padding: clamp(1rem, 3vw, 2rem);
+  color: var(--text-color);
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  box-sizing: border-box;
 }
 
 .code-title {
-  font-family: 'Cinzel', serif;
-  font-size: 3rem;
-  color: var(--color-light-gold);
+  color: var(--gold);
   text-align: center;
-  margin-bottom: 1rem;
-  text-shadow: 0 0 10px var(--color-dark-gold);
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  margin-bottom: 0.5rem;
+  font-family: 'Cinzel', serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .code-subtitle {
   text-align: center;
-  color: var(--color-light-gold);
-  font-style: italic;
-  font-size: 1.2rem;
-  margin-bottom: 3rem;
-  opacity: 0.9;
+  color: var(--light-violet);
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  margin-bottom: 2rem;
 }
 
 .code-sections {
@@ -29,112 +29,108 @@
 }
 
 .code-section {
-  background: rgba(155, 79, 150, 0.1);
-  padding: 2rem;
-  border-radius: 8px;
-  border: 1px solid var(--color-light-gold);
+  background: rgba(46, 20, 55, 0.7);
+  border-radius: 15px;
+  padding: clamp(1rem, 3vw, 2rem);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--gold);
 }
 
 .code-section h3 {
-  color: var(--color-light-gold);
-  font-size: 1.8rem;
-  margin-bottom: 1.5rem;
+  color: var(--gold);
   font-family: 'Cinzel', serif;
+  font-size: clamp(1.3rem, 4vw, 1.8rem);
+  margin-bottom: 1.5rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
-.code-list {
+.rule-group {
+  margin-bottom: 1.5rem;
+}
+
+.rule-group:last-child {
+  margin-bottom: 0;
+}
+
+.rule-group h4 {
+  color: var(--gold);
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
+  margin-bottom: 1rem;
+}
+
+.rule-content {
+  color: var(--text-color);
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  line-height: 1.6;
+}
+
+.behavior-rules,
+.marker-list,
+.formation-list,
+.war-rules {
   list-style: none;
   padding: 0;
+  margin: 0 0 1rem 0;
 }
 
-.code-list li {
+.behavior-rules li,
+.marker-list li,
+.formation-list li,
+.war-rules li {
+  margin-bottom: 0.8rem;
   display: flex;
-  gap: 1.5rem;
-  margin-bottom: 1.5rem;
-  padding: 1rem;
-  background: rgba(46, 20, 55, 0.6);
-  border-radius: 8px;
-  transition: all 0.3s ease;
+  align-items: flex-start;
+  line-height: 1.4;
 }
 
-.code-list li:hover {
-  transform: translateX(10px);
-  box-shadow: 0 5px 15px rgba(212, 175, 55, 0.2);
-}
-
-.rule-number {
-  font-size: 2rem;
-  color: var(--color-light-gold);
-  font-weight: bold;
-  min-width: 40px;
+.marker-list li {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 0.5rem;
 }
 
-.rule-content h4 {
-  color: var(--color-light-gold);
+.marker {
   font-size: 1.2rem;
-  margin-bottom: 0.5rem;
+  margin-right: 0.5rem;
 }
 
-.rule-content p {
-  color: var(--color-light-gold);
-  opacity: 0.8;
-  line-height: 1.5;
-}
+.marker.star { color: #ffd700; }
+.marker.heart { color: #ff6b6b; }
+.marker.shield { color: #4dabf7; }
+.marker.target { color: #ff0000; }
 
 .code-footer {
+  margin-top: 2rem;
   text-align: center;
-  margin-top: 3rem;
-  padding: 2rem;
-  background: rgba(155, 79, 150, 0.1);
-  border-radius: 8px;
-  border: 1px solid var(--color-light-gold);
 }
 
-.footer-quote {
-  color: var(--color-light-gold);
-  font-size: 1.5rem;
-  font-style: italic;
-  margin-bottom: 2rem;
-  font-family: 'Cinzel', serif;
-}
-
-.accept-btn {
-  background: transparent;
-  color: var(--color-light-gold);
-  border: 2px solid var(--color-light-gold);
-  padding: 1rem 2rem;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-family: 'Cinzel', serif;
-  letter-spacing: 1px;
-}
-
-.accept-btn:hover {
-  background: var(--color-light-gold);
-  color: var(--color-dark-violet);
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
-}
-
-@media (max-width: 768px) {
-  .code-title {
-    font-size: 2.5rem;
+/* Mobile adjustments */
+@media screen and (max-width: 767px) {
+  .pirate-code-container {
+    padding: 1rem;
   }
-  
-  .code-section h3 {
-    font-size: 1.5rem;
+
+  .code-section {
+    padding: 1rem;
   }
-  
-  .code-list li {
-    flex-direction: column;
-    gap: 1rem;
+
+  .marker-list li,
+  .formation-list li,
+  .war-rules li {
+    margin-bottom: 1rem;
   }
-  
-  .rule-number {
-    font-size: 1.5rem;
+
+  .accept-btn {
+    width: 100%;
+    padding: 0.8rem;
+  }
+}
+
+/* iPhone specific */
+@supports (-webkit-touch-callout: none) {
+  .pirate-code-container {
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
   }
 }
